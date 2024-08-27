@@ -1,8 +1,8 @@
 <h1>My Tasks</h1>
-
-<p>
-  <%= @all_tasks[0].title %>
-</p>
-<p>
-  <%= @all_tasks[1].title %>
-</p>
+<div>
+  <ol>
+    <% @all_tasks.each do |t| %>
+      <li><%= t.title %></li>
+    <% end %>
+  </ol>
+</div>
