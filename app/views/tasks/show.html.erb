@@ -1,0 +1,9 @@
+<h1> <%= @task.title %>  </h1>
+
+<div class="card w-50 mb-3">
+  <div class="card-body bg-info-subtle">
+    <%= @task.details %>
+  </div>
+</div>
+
+<%= link_to 'Back to list', tasks_path %>

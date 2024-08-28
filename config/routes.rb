@@ -7,5 +7,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get "tasks", to: "tasks#tasks"
+  # root "tasks#tasks"
+  # VERB RUTA, to: CONTROLLER#ACTION
+  get "tasks", to: "tasks#index"
+  # NEW
+  get "tasks/new", to: "tasks#new", as: :new_restaurant
+  # POST (del New)
+  post "tasks", to: "tasks#create"
+  # al llamar ':id' llamamos al PARAMS que vamos a crear en el metodo show
+  get "tasks/:id", to: "tasks#show", as: :task
 end
