@@ -15,6 +15,18 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.save
+    # lo redirijo al "#show" que es el /:id variable
+    redirect_to task_path(@task)
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(task_params)
+    # lo redirijo al "#show" que es el /:id variable
     redirect_to task_path(@task)
   end
 
